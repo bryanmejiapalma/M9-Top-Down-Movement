@@ -8,7 +8,6 @@ radius = 24.020824
 
 [node name="Runner" type="CharacterBody2D"]
 position = Vector2(520, 120)
-motion_mode = 1
 script = ExtResource("1_f7b3c")
 
 [node name="Skin" type="Sprite2D" parent="."]
@@ -18,3 +17,5 @@ texture = ExtResource("1_m3p76")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 35)
 shape = SubResource("CircleShape2D_f7b3c")
+
+[node name="Camera2D" type="Camera2D" parent="."]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://p6krymt155ab"]
+
+[ext_resource type="PackedScene" uid="uid://bw7oebjpdt5r8" path="res://runner.tscn" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://bqyt66qognb6h" path="res://simple_obstacle.tscn" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://bvlvxjmbalaj0" path="res://Circuit.tscn" id="3_feb5d"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(-29, -39)
+
+[node name="Runner" parent="." instance=ExtResource("1_e2o6t")]
+position = Vector2(-759, -882)
+
+[node name="02ComplicatedOpstacle" parent="." instance=ExtResource("3_feb5d")]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(56, -932)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(-351, -834)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(361, 304)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(404, -833)
