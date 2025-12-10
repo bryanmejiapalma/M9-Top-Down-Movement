@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://pivulymb3qk8" path="res://assets/circuit.svg" id="1_cutfq"]
 
-[node name="02ComplicatedOpstacle" type="StaticBody2D"]
+[node name="Circuit" type="StaticBody2D"]
 
 [node name="CircuitObstacle" type="Sprite2D" parent="."]
 z_index = -2
