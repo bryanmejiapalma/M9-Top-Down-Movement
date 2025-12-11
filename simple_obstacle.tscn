@@ -13,6 +13,7 @@ position = Vector2(0, 74)
 texture = ExtResource("1_2i7i7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
 position = Vector2(0, 76)
 shape = SubResource("RectangleShape2D_2i7i7")
 debug_color = Color(0.85519385, 0, 0.21866715, 0.41960785)
