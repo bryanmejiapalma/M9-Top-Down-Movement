@@ -1,18 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://p6krymt155ab"]
+[gd_scene load_steps=6 format=3 uid="uid://p6krymt155ab"]
 
+[ext_resource type="Script" uid="uid://dacup40k4uuox" path="res://game.gd" id="1_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bw7oebjpdt5r8" path="res://runner.tscn" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://bqyt66qognb6h" path="res://simple_obstacle.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://bvlvxjmbalaj0" path="res://Circuit.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://xl56q8amb611" path="res://assets/finish_line/finish_line.tscn" id="4_fc0e3"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(-29, -39)
+script = ExtResource("1_7jktm")
 
 [node name="Runner" parent="." instance=ExtResource("1_e2o6t")]
-position = Vector2(-587, -823)
+position = Vector2(-1330, -317)
 
 [node name="Circuit" parent="." instance=ExtResource("3_feb5d")]
-position = Vector2(-19, 2)
+position = Vector2(-20, 2)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("2_feb5d")]
 z_index = -1
@@ -29,3 +32,8 @@ position = Vector2(879, 757)
 [node name="StaticBody2D4" parent="." instance=ExtResource("2_feb5d")]
 z_index = 1
 position = Vector2(404, -833)
+
+[node name="FinishLine" parent="." instance=ExtResource("4_fc0e3")]
+unique_name_in_owner = true
+position = Vector2(-1361, -222)
+area_width = 256
