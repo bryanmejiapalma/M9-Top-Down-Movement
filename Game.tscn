@@ -9,7 +9,7 @@ y_sort_enabled = true
 position = Vector2(-29, -39)
 
 [node name="Runner" parent="." instance=ExtResource("1_e2o6t")]
-position = Vector2(-197, -805)
+position = Vector2(-587, -823)
 
 [node name="Circuit" parent="." instance=ExtResource("3_feb5d")]
 position = Vector2(-19, 2)
