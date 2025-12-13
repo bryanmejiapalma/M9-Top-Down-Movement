@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://p6krymt155ab"]
+[gd_scene load_steps=9 format=3 uid="uid://p6krymt155ab"]
 
 [ext_resource type="Script" uid="uid://dacup40k4uuox" path="res://game.gd" id="1_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bw7oebjpdt5r8" path="res://runner.tscn" id="1_e2o6t"]
@@ -7,14 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://xl56q8amb611" path="res://assets/finish_line/finish_line.tscn" id="4_fc0e3"]
 [ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="6_eow3j"]
 [ext_resource type="Script" uid="uid://57e8080cpukf" path="res://assets/countdown/count_down.gd" id="7_j5wjh"]
-[ext_resource type="Shader" uid="uid://dp1hn66gsihpv" path="res://assets/blur.gdshader" id="8_j5wjh"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vef74"]
-shader = ExtResource("8_j5wjh")
-shader_parameter/blur_amount = 5.30000025175
-shader_parameter/tint = Color(0, 0, 0, 1)
-shader_parameter/tint_strength = 0.0
-shader_parameter/saturation = 1.0
+[ext_resource type="PackedScene" uid="uid://27sq30nu7smq" path="res://pause_screem.tscn" id="8_joorw"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -71,41 +64,4 @@ vertical_alignment = 1
 script = ExtResource("7_j5wjh")
 metadata/_custom_type_script = "uid://57e8080cpukf"
 
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 780.0
-offset_top = 430.5
-offset_right = 820.0
-offset_bottom = 470.5
-
-[node name="BlurColorRect" type="ColorRect" parent="CanvasLayer/Control"]
-material = SubResource("ShaderMaterial_vef74")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2485.0
-offset_top = -1575.5
-offset_right = -2019.0
-offset_bottom = -1269.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control/BlurColorRect"]
-layout_mode = 0
-offset_left = 76.0
-offset_top = 82.0
-offset_right = 426.0
-offset_bottom = 356.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/BlurColorRect/CenterContainer"]
-layout_mode = 2
-
-[node name="resume button" type="Button" parent="CanvasLayer/Control/BlurColorRect/CenterContainer/VBoxContainer"]
-layout_mode = 2
-text = "resume"
-
-[node name="Button" type="Button" parent="CanvasLayer/Control/BlurColorRect/CenterContainer/VBoxContainer"]
-layout_mode = 2
-text = "Quit"
+[node name="PauseScreem" parent="CanvasLayer" instance=ExtResource("8_joorw")]
