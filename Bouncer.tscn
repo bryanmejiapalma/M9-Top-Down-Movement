@@ -1,13 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwmqnfiahyt80"]
+[gd_scene load_steps=13 format=3 uid="uid://dwmqnfiahyt80"]
 
 [ext_resource type="Script" uid="uid://d2hs0yqiqbc56" path="res://bouncer.gd" id="1_dwd3m"]
 [ext_resource type="Texture2D" uid="uid://dbcmxo51msi8m" path="res://assets/runner/shadow.png" id="2_ipl3p"]
 [ext_resource type="Texture2D" uid="uid://bkq3gfbp5fwqx" path="res://assets/circle_64x64.png" id="3_uykn3"]
 [ext_resource type="PackedScene" uid="uid://hjn4sr1lgmmx" path="res://assets/runner/runner_visual_purple.tscn" id="4_dwd3m"]
 [ext_resource type="Shader" uid="uid://bwhexggpo0snf" path="res://assets/character_contour.gdshader" id="5_yhcar"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_f7b3c"]
-radius = 21.023796
 
 [sub_resource type="Curve" id="Curve_vk5uk"]
 _data = [Vector2(0.8988763, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -23,6 +20,9 @@ scale_min = 0.5
 scale_max = 0.7
 scale_curve = SubResource("CurveTexture_6v1ry")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ipl3p"]
+radius = 18.439089
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_44hxy"]
 shader = ExtResource("5_yhcar")
 shader_parameter/viewport_scale = Vector2(1, 1)
@@ -32,13 +32,12 @@ shader_parameter/line_thickness = 4.0
 [sub_resource type="ViewportTexture" id="ViewportTexture_hfbw2"]
 viewport_path = NodePath("SubViewport")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dwd3m"]
+radius = 19.235384
+
 [node name="Bouncer" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_dwd3m")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -19)
-shape = SubResource("CircleShape2D_f7b3c")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 0.15686275)
@@ -55,6 +54,10 @@ process_material = SubResource("ParticleProcessMaterial_iwbjd")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -17)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -18)
+shape = SubResource("CircleShape2D_ipl3p")
+
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
 size = Vector2i(140, 150)
@@ -69,3 +72,11 @@ scale = Vector2(0.4, 0.4)
 material = SubResource("ShaderMaterial_44hxy")
 position = Vector2(-2, -73)
 texture = SubResource("ViewportTexture_hfbw2")
+
+[node name="HitBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-1, -19)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_dwd3m")

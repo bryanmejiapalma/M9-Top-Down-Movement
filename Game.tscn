@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://p6krymt155ab"]
+[gd_scene load_steps=10 format=3 uid="uid://p6krymt155ab"]
 
 [ext_resource type="Script" uid="uid://dacup40k4uuox" path="res://game.gd" id="1_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bw7oebjpdt5r8" path="res://runner.tscn" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://bqyt66qognb6h" path="res://simple_obstacle.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://bvlvxjmbalaj0" path="res://Circuit.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://dwmqnfiahyt80" path="res://Bouncer.tscn" id="3_vef74"]
 [ext_resource type="PackedScene" uid="uid://xl56q8amb611" path="res://assets/finish_line/finish_line.tscn" id="4_fc0e3"]
 [ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="6_eow3j"]
 [ext_resource type="Script" uid="uid://57e8080cpukf" path="res://assets/countdown/count_down.gd" id="7_j5wjh"]
@@ -16,7 +17,11 @@ script = ExtResource("1_7jktm")
 
 [node name="Runner" parent="." instance=ExtResource("1_e2o6t")]
 unique_name_in_owner = true
-position = Vector2(-1330, -317)
+position = Vector2(-932, -589)
+
+[node name="Bouncer" parent="." instance=ExtResource("3_vef74")]
+unique_name_in_owner = true
+position = Vector2(-1144, -363)
 
 [node name="Circuit" parent="." instance=ExtResource("3_feb5d")]
 position = Vector2(-20, 2)
