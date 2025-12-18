@@ -20,7 +20,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4k6h6")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="BlurColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
 material = SubResource("ShaderMaterial_qbpqg")
 layout_mode = 1
 anchors_preset = 15
@@ -30,6 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="UIPanelContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
