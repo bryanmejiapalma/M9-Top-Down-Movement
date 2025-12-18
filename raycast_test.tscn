@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://fpn6h3cn7rgx"]
+
+[ext_resource type="Script" uid="uid://ste1xx0uyk34" path="res://ray_cast_2d.gd" id="1_1pimh"]
+[ext_resource type="PackedScene" uid="uid://bqyt66qognb6h" path="res://simple_obstacle.tscn" id="1_3mfk3"]
+
+[node name="RaycastTest" type="Node2D"]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-137, 41.000004)
+rotation = -1.5109323
+target_position = Vector2(3.4102135, 56.897903)
+script = ExtResource("1_1pimh")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_3mfk3")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
